@@ -38,7 +38,7 @@ const Video = ({ video }: props) => {
   return (
     <>
       <Button
-        type="secondary"
+        type="default"
         icon={<PlayCircleOutlined />}
         shape="circle"
         onClick={showModal}

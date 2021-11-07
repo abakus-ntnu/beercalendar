@@ -4,7 +4,7 @@ const createCoolText = (text: string) => {
   return text.split("").map((letter, i) => {
     const color = i % 2 == 0 ? "red" : "green";
     return (
-      <span className={styles.christmas} style={{ color }}>
+      <span className={styles.christmas} style={{ color }} key={i}>
         {letter}
       </span>
     );
