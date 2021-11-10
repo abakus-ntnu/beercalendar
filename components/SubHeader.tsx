@@ -1,15 +1,17 @@
 import styles from "./Header.module.css";
 
 const SubHeader = () => {
-  const today = new Date().toLocaleDateString();
+  let options = { weekday: 'long', year: 'numeric', month: 'long', day: '2-digit' }; 
+  // @ts-ignore :)
+  const today = new Date().toLocaleDateString("no", options);
   return (
     <>
-      <h2 className={styles.subChristmas}>
-        DAG: {today}
-        <hr />
-        Som enhver julekalender er det 24 luker eller i dette tilfellet 24 små
-        videoer.
-      </h2>
+      <div className={styles.subChristmas}>
+        {today}
+        <div className={styles.trailer}>
+         <iframe src="https://www.youtube.com/embed/j5ceLMPlqnA" title="YouTube video player" frameBorder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+        </div>
+      </div>
     </>
   );
 };
