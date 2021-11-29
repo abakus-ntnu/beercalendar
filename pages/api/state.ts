@@ -24,7 +24,7 @@ const handler = async (
   };
   const videos = await getVideos(process.env.CHANNEL || "").then((data) => {
     return data.items
-      .filter((e, i) => i != 0) // remove first video, which is the trailer
+      .filter((_: any, i: number) => i != 0) // remove first video, which is the trailer
       .map((video: any) => {
         return {
           name: video.snippet.title,
