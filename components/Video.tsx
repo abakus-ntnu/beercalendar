@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import YouTube from "react-youtube";
 import { Modal, Button, Typography } from "antd";
 import { PlayCircleOutlined } from "@ant-design/icons";
+import styles from "./Video.module.css";
 
 const { Text } = Typography;
 
@@ -42,6 +43,7 @@ const Video = ({ video }: props) => {
         icon={<PlayCircleOutlined />}
         shape="circle"
         onClick={showModal}
+        className={styles.button}
       />
 
       <Modal
