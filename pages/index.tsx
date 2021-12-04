@@ -5,13 +5,17 @@ import { IVideo } from "models/video";
 import type { NextPage } from "next";
 import Head from "next/head";
 import useSWR from "swr";
+import { useRouter } from "next/router";
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
 const Home: NextPage = () => {
+  const router = useRouter();
+  const luke = Number(router.query.luke);
+
   const { data, error } = useSWR("/api/state", fetcher);
 
-  let allSlots = new Array(24).fill(null);
+  const allSlots = new Array(24).fill(null);
   data?.videos.forEach((video: IVideo, i: number) => {
     allSlots[i] = video;
   });
@@ -35,7 +39,7 @@ const Home: NextPage = () => {
               <div className="door">
                 <div className="front">{i + 1}</div>
                 <div className={elem ? "back" : "back back2"}>
-                  <Video video={elem} />
+                  <Video video={elem} initiallyOpen={luke == i + 1} />
                 </div>
               </div>
             </label>
