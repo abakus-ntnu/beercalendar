@@ -12,7 +12,7 @@ const createCoolText = (text: string) => {
 };
 
 const Header = () => {
-  return <h1>{createCoolText("Juleølkalender")}</h1>;
+  return <h1>{createCoolText("Abakal3nd3rikus")}</h1>;
 };
 
 export default Header;
