@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import YouTube from "react-youtube";
 import { Modal, Button, Typography } from "antd";
 import { PlayCircleOutlined } from "@ant-design/icons";
@@ -10,10 +10,17 @@ import { IVideo } from "models/video";
 
 type props = {
   video: IVideo | null;
+  initiallyOpen: boolean;
 };
 
-const Video = ({ video }: props) => {
+const Video = ({ video, initiallyOpen }: props) => {
   const [isModalVisible, setIsModalVisible] = useState(false);
+
+  useEffect(() => {
+    if (initiallyOpen) {
+      showModal();
+    }
+  }, [initiallyOpen]);
 
   const opts = {
     height: "400",
