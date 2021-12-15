@@ -1,23 +1,22 @@
-
 .button {
-    width: 50%;
-    height: 50%;
-    border: none;
-    background-color: transparent;
+  width: 50%;
+  height: 50%;
+  border: none;
+  background-color: transparent;
 }
 
 .button span {
-    font-size: 3.2em;
-    color: #ffd700;
+  font-size: 3.2em;
+  color: #ffd700;
 }
 
 .button:hover,
 .button:focus,
 .button:active {
-    background-color: transparent;
+  background-color: transparent;
 }
 
 .button:hover span {
-    transition: filter 300ms ease-out;
-    filter: drop-shadow(0 0 0.1em #ffd700);
+  transition: filter 300ms ease-out;
+  filter: drop-shadow(0 0 0.1em #ffd700);
 }
