@@ -13,7 +13,7 @@ const handler = async (
   const getVideos = async (playlistId: string) => {
     const params = new URLSearchParams({
       part: "snippet",
-      maxResults: "24",
+      maxResults: "25",
       key: process.env.API_KEY || "",
       playlistId,
     });
